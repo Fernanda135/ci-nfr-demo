@@ -1,0 +1,40 @@
+name: CI - Teste automatizado de NFR (Performance)
+
+# Dispara o pipeline a cada push ou pull request, reproduzindo o cenário
+# descrito no artigo: o CI server executa os testes automaticamente
+# quando o código-fonte é alterado (Example 1, Seção 4.2 do artigo).
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+jobs:
+  teste-performance:
+    name: Medir MRT (Mean Response Time)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Executar teste automatizado de NFR (Performance)
+        # As variáveis abaixo controlam o número de requisições coletadas (n)
+        # e o limite aceitável de MRT, podendo ser ajustadas para a demonstração.
+        env:
+          NUM_REQUISICOES: 20
+          LIMITE_MRT_MS: 100
+        run: npm run test:performance
+
+      - name: Resultado
+        if: always()
+        run: echo "Job finalizado. Verifique acima o valor de MRT calculado e se o limite foi respeitado."
