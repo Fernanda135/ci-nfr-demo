@@ -379,19 +379,19 @@ No primeiro cenário, a aplicação responde dentro do limite de tempo previamen
  
 No segundo cenário, uma latência artificial foi introduzida propositalmente no código da API, fazendo com que o MRT calculado superasse o limite de 100 ms definido no \textit{workflow}. Como consequência, o \textit{pipeline} de CI falha automaticamente, sinalizando à equipe de desenvolvimento que o requisito não funcional de desempenho não foi atendido -- exatamente o comportamento de notificação automática discutido pelos autores como um dos principais benefícios de se utilizar ambientes de CI para testes de NFRs. A Figura~\ref{fig:demo-falha} apresenta a execução do \textit{workflow} nesse cenário.
  
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=\textwidth]{demo-falha.png}
-%     \caption{Execução do pipeline de CI com o teste de performance reprovado (MRT acima do limite estabelecido).}
-%     \label{fig:demo-falha}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{demo-falha.png}
+    \caption{Execução do pipeline de CI com o teste de performance reprovado (MRT acima do limite estabelecido).}
+    \label{fig:demo-falha}
+\end{figure}
  
 \subsection{Repositório da demonstração}
  
 O código-fonte completo da demonstração, incluindo a API, o script de teste automatizado e o \textit{workflow} do GitHub Actions, está disponível no seguinte repositório:
  
 \begin{center}
-    \url{https://github.com/USUARIO/REPOSITORIO}
+    \url{https://github.com/Fernanda135/ci-nfr-demo}
 \end{center}
 
 
