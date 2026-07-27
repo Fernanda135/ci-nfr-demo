@@ -1,14 +1,12 @@
-// server.js
 // API mínima em Express, usada como alvo do teste de performance (NFR: Performance).
-// Rota GET /produtos simula uma consulta simples, com uma pequena latência artificial
-// para tornar a métrica de tempo de resposta mais interessante na demonstração.
+// Rota GET /produtos simula uma consulta simples, com uma latência artificial
 
 const express = require('express');
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-// "Banco de dados" fake em memória
+
 const produtos = [
   { id: 1, nome: 'Teclado mecânico', preco: 250.0 },
   { id: 2, nome: 'Mouse sem fio', preco: 90.0 },
@@ -16,8 +14,7 @@ const produtos = [
   { id: 4, nome: 'Headset gamer', preco: 320.0 },
 ];
 
-// Latência artificial (ms) para simular processamento/consulta ao banco.
-// Pode ser aumentada para forçar o teste de performance a falhar na demonstração.
+// Latência artificial para simular processamento/consulta ao banco.
 const LATENCIA_MS = Number(process.env.LATENCIA_MS || 30);
 // const LATENCIA_MS = Number(process.env.LATENCIA_MS || 150);
 
