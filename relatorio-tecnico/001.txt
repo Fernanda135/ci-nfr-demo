@@ -1,0 +1,387 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+%\usepackage[latin1]{inputenc} 
+\usepackage{float}
+
+     
+\sloppy
+
+\title{Análise Crítica de Artigo Científico sobre \\Testes de Software}
+
+\author{Antonio Matheus Pereira de Lima\inst{1}, Fernanda Vitória Araújo Santos\inst{2},\\ João Guilherme da Silva\inst{3}, Juan do Monte Pereira\inst{4} }
+
+
+\address{Análise em Desenvolvimentos de Sistemas -- Instituto Federal do Piauí (IFPI)\\
+  Caixa Postal gabinete.capic@ifpi.edu.br -- 64605-5
+}
+
+\begin{document} 
+
+\maketitle
+     
+\begin{resumo} 
+  Este trabalho apresenta uma análise crítica do artigo científico \textit{Automated NFR testing in continuous integration environments: a multi-case study of Nordic companies}, publicado no periódico \textit{Empirical Software Engineering} em 2023. O estudo original investiga, por meio de um estudo de caso múltiplo realizado em quatro empresas nórdicas, como testes automatizados de Requisitos Não Funcionais (NFRs) podem ser habilitados e apoiados por ambientes de Integração Contínua (CI). A presente análise discute o problema abordado, a metodologia empregada, os principais resultados obtidos, bem como as limitações do estudo e sua aplicabilidade prática em empresas de desenvolvimento de software.
+\end{resumo}
+
+
+\section{Introdução}
+
+O presente trabalho consiste na análise crítica do artigo científico intitulado \textit{Automated NFR testing in continuous integration environments: a multi-case study of Nordic companies}.\nocite{yu2023automated} Nesta seção, são apresentados os principais dados de identificação da publicação.
+
+\begin{itemize}
+    \item \textbf{Título do Artigo:}
+    \textit{Automated NFR testing in continuous integration environments: a multi-case study of Nordic companies.}
+
+    \item \textbf{Autores:}
+    \begin{enumerate}
+        \item Liang Yu;
+        \item Emil Alégroth;
+        \item Panagiota Chatzipetrou;
+        \item Tony Gorschek.
+    \end{enumerate}
+
+    \item \textbf{Instituição dos Autores:}
+    \begin{itemize}
+        \item Blekinge Institute of Technology, Karlskrona, Suécia;
+        \item Örebro University School of Business (CERIS), Örebro, Suécia;
+        \item Fortiss GmbH, Munique, Alemanha.
+    \end{itemize}
+
+    \item \textbf{Ano de Publicação:}
+    \begin{itemize}
+        \item Aceito em: 7 de junho de 2023;
+        \item Publicado online em: 24 de outubro de 2023.
+    \end{itemize}
+
+    \item \textbf{Periódico:}
+    \begin{itemize}
+        \item \textit{Empirical Software Engineering}, volume 28, artigo 144.
+    \end{itemize}
+
+    \item \textbf{Área de Pesquisa:}
+    \begin{itemize}
+        \item Engenharia de Software, com foco em testes automatizados de requisitos não funcionais (\textit{Non-Functional Requirements -- NFRs}) em ambientes de Integração Contínua (\textit{Continuous Integration -- CI}).
+    \end{itemize}
+\end{itemize}
+
+
+\section{Contextualização}
+
+\subsection{Problema abordado}
+
+O artigo investiga como habilitar e apoiar a realização de testes automatizados de Requisitos Não Funcionais (\textit{Non-Functional Requirements -- NFRs}) em ambientes de Integração Contínua (\textit{Continuous Integration -- CI}). Embora a automação de testes funcionais esteja amplamente consolidada, a automação de testes de NFRs ainda representa um desafio significativo para a indústria de software.
+
+\subsection{Importância do problema}
+
+Os requisitos não funcionais, como desempenho, segurança e confiabilidade, influenciam diretamente a qualidade e o sucesso de um produto de software. Além disso, em diversos contextos, esses requisitos precisam atender a regulamentações específicas, como o Regulamento Geral sobre a Proteção de Dados (\textit{General Data Protection Regulation -- GDPR}), tornando sua validação essencial durante o desenvolvimento.
+
+\subsection{Impactos no desenvolvimento de software}
+
+A ausência de processos automatizados para testes de NFRs impacta negativamente o desenvolvimento de software, pois muitas organizações ainda dependem de práticas predominantemente manuais. Isso torna o processo de validação menos eficiente, cria gargalos nos ambientes de CI e aumenta a probabilidade de que problemas sejam identificados apenas nas fases finais do desenvolvimento. Segundo o artigo, defeitos relacionados a requisitos não funcionais podem gerar retrabalho equivalente a 40\% a 50\% do esforço total de um projeto, elevando custos e comprometendo a qualidade do software entregue.
+
+
+\section{Fundamentação}
+
+Para compreender o estudo analisado, é necessário conhecer alguns conceitos fundamentais relacionados à Engenharia de Software.
+
+\subsection{Testes Automatizados}
+
+Os testes automatizados consistem na utilização de ferramentas e scripts para executar casos de teste de forma automática, reduzindo a necessidade de execução manual. Essa abordagem torna o processo de validação mais rápido, repetitivo e confiável, além de facilitar a identificação precoce de defeitos durante o desenvolvimento do software.
+
+\subsection{Integração Contínua}
+
+A Integração Contínua (\textit{Continuous Integration -- CI}) é uma prática de desenvolvimento de software na qual alterações no código são integradas frequentemente a um repositório compartilhado. A cada integração, processos automatizados, como compilação e execução de testes, são realizados para verificar a qualidade do software e detectar falhas rapidamente.
+
+\subsection{Requisitos Não Funcionais}
+
+Os Requisitos Não Funcionais (\textit{Non-Functional Requirements -- NFRs}) descrevem características relacionadas à qualidade do sistema, definindo como ele deve executar suas funcionalidades. Entre os principais exemplos estão desempenho, segurança, confiabilidade, disponibilidade, escalabilidade e usabilidade.
+
+
+
+\section{Objetivo da Pesquisa}
+
+\subsection{Objetivo principal}
+
+O objetivo principal do artigo é examinar como o teste automatizado de Requisitos Não Funcionais (\textit{Non-Functional Requirements -- NFRs}) pode ser habilitado e suportado por ambientes de Integração Contínua (\textit{Continuous Integration -- CI}) em empresas de desenvolvimento de software.
+
+\subsection{Contribuição esperada}
+
+Os autores buscam demonstrar como os dados produzidos pelos ambientes de CI podem ser utilizados para avaliar e monitorar continuamente a qualidade dos requisitos não funcionais implementados, contribuindo para a identificação precoce de problemas e para a melhoria contínua da qualidade do software.
+
+\subsection{Investigação realizada}
+
+Para alcançar o objetivo proposto, os autores conduziram a investigação por meio de
+quatro perguntas de pesquisa, que orientaram a coleta e a análise dos dados:
+
+\begin{itemize}
+    \item \textbf{RQ1:} Quais tipos de NFRs são verificados por meio de testes automatizados?
+
+    \item \textbf{RQ2:} Quais métricas são utilizadas para testes automatizados de NFRs na prática industrial?
+
+    \item \textbf{RQ3:} Como os ambientes de Integração Contínua contribuem para as capacidades de teste de NFRs?
+
+    \item \textbf{RQ4:} Quais desafios estão associados aos testes automatizados de NFRs?
+\end{itemize}
+
+As perguntas de pesquisa delimitam os aspectos específicos analisados: os tipos de NFRs testados (RQ1), as métricas empregadas (RQ2), a contribuição dos componentes de CI (RQ3) e os desafios enfrentados na prática (RQ4).
+
+
+
+
+\section{Metodologia}
+
+\subsection{Tipo de pesquisa}
+
+A pesquisa foi conduzida por meio de um estudo de caso múltiplo, com o objetivo de investigar como empresas de desenvolvimento de software utilizam ambientes de Integração Contínua para apoiar a automação de testes de Requisitos Não Funcionais.
+
+\subsection{Etapas da pesquisa}
+
+O processo metodológico foi dividido em quatro etapas:
+
+\begin{enumerate}
+    \item Planejamento, com definição dos objetivos e das questões de pesquisa;
+    \item Elaboração do desenho do estudo de caso, incluindo roteiro das entrevistas, seleção dos participantes e testes-piloto;
+    \item Coleta de dados por meio de entrevistas semiestruturadas;
+    \item Análise temática e síntese dos dados coletados.
+\end{enumerate}
+
+\subsection{Coleta e análise dos dados}
+
+A coleta de dados foi realizada por meio de 22 entrevistas semiestruturadas com profissionais da indústria de software. Após a transcrição das entrevistas, os dados foram analisados utilizando a técnica de análise temática.
+
+\subsection{Estudo de caso}
+
+O estudo foi realizado em quatro empresas de desenvolvimento de software: Qvantel Sweden, Ericsson, Fortnox e uma empresa identificada como Company Alpha, cujo nome foi preservado por questões de confidencialidade. Ao todo, foram analisados cinco projetos distintos, identificados pelos autores como Projetos A, B, C, D e E.
+
+
+\section{Solução Proposta}
+
+\subsection{Funcionamento da solução}
+
+A solução proposta consiste em um modelo teórico-empírico que demonstra como os ambientes de Integração Contínua podem habilitar e dar suporte à automação dos testes de Requisitos Não Funcionais. O modelo mostra como os dados produzidos durante o processo de desenvolvimento são transformados em métricas capazes de avaliar continuamente a qualidade desses requisitos.
+
+\subsection{Entradas}
+
+O modelo recebe como entrada informações produzidas durante o processo de desenvolvimento, como alterações no código-fonte, \textit{commits} realizados no sistema de controle de versão e artefatos gerados durante o processo de \textit{build}.
+
+\subsection{Saídas}
+
+Como resultado do processamento dessas informações, o ambiente de Integração Contínua produz métricas de qualidade, relatórios de vulnerabilidades, indicadores de desempenho, tendências de qualidade ao longo do tempo e notificações automáticas que auxiliam os desenvolvedores na identificação e correção de problemas relacionados aos requisitos não funcionais.
+
+
+\section{Resultados}
+
+\subsection{Principais resultados}
+
+Os resultados da pesquisa mostram que os ambientes de Integração Contínua possibilitam a automação de diferentes tipos de requisitos não funcionais. A Figura~\ref{fig:sintese-resultados} apresenta uma síntese dos tipos de NFR identificados no estudo, seus atributos associados, a classificação como atributo interno ou externo, e os projetos em que cada requisito foi observado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{sintese-resultados.png}
+    \caption{Tipos e atributos de NFR identificados. (Tabela 5 do artigo)}
+    \label{fig:sintese-resultados}
+    \caption*{\footnotesize Fonte: Yu et al. (2023).}
+\end{figure}
+
+Conforme ilustrado na Figura~\ref{fig:sintese-resultados}, foram identificados cinco tipos de requisitos não funcionais: desempenho, segurança, escalabilidade, manutenibilidade e estabilidade. O requisito de desempenho foi observado em todos os projetos analisados, enquanto os requisitos de segurança estiveram presentes em quatro projetos. Já os requisitos de escalabilidade, manutenibilidade e estabilidade apareceram em menor frequência. A figura também evidencia a associação entre cada tipo de NFR, as ferramentas utilizadas para sua avaliação e os componentes de Integração Contínua empregados pelas empresas participantes.
+
+
+
+\subsection{Validação da proposta}
+
+Os resultados obtidos indicam que a proposta apresentada pelos autores mostrou-se viável para apoiar a automação de testes de requisitos não funcionais. O estudo resultou em um modelo teórico-empírico e em um guia prático que relaciona componentes dos ambientes de Integração Contínua, ferramentas e métricas utilizadas na avaliação contínua dos NFRs em empresas de desenvolvimento de software.
+
+\subsection{Métricas utilizadas}
+
+As métricas utilizadas para avaliar os requisitos não funcionais variaram de acordo com o tipo de NFR analisado. A Figura~\ref{fig:metricas-nfr} apresenta exemplos das métricas extraídas nos projetos estudados, bem como os componentes de Integração Contínua relacionados à sua obtenção.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{metricas-nfr.png}
+    \caption{Métricas de requisitos não funcionais extraídas para testes automatizados nos projetos estudados. (Tabela 6 do artigo)}
+    \label{fig:metricas-nfr}
+    \caption*{\footnotesize Fonte: Yu et al. (2023).}
+\end{figure}
+
+Conforme apresentado na Figura~\ref{fig:metricas-nfr}, para os requisitos de desempenho foram utilizadas métricas como o Tempo Médio de Resposta (\textit{Mean Response Time -- MRT}), a Utilização do Processador (\textit{Processor Usage -- PU}) e a Precisão das Solicitações de API (\textit{Accuracy of API requests -- AOAR}). Para os requisitos de segurança, foram empregadas métricas relacionadas à criptografia de dados e à avaliação de vulnerabilidades. Essas métricas foram obtidas a partir de dados coletados pelos componentes do ambiente de Integração Contínua, como sistemas de controle de versão, servidores de CI, ferramentas de automação de testes, plataformas em nuvem e sistemas de rastreamento de problemas.
+
+
+\subsection{Comparação com abordagens tradicionais}
+
+Os autores observam que a utilização de ambientes de Integração Contínua proporciona vantagens em relação aos processos tradicionais de testes predominantemente manuais. Entre os principais benefícios estão a detecção precoce de problemas, o monitoramento contínuo da qualidade dos requisitos não funcionais e a geração de feedback automático aos desenvolvedores, tornando o processo de desenvolvimento mais eficiente.
+
+
+
+\section{Limitações}
+
+\subsection{Aspectos não resolvidos}
+
+Os autores destacam que alguns requisitos não funcionais, especialmente os de natureza subjetiva, como a usabilidade, ainda são difíceis de automatizar e medir de forma confiável. Dessa forma, esses requisitos continuam dependendo, em grande parte, de avaliações realizadas por especialistas ou usuários.
+
+\subsection{Dificuldades encontradas}
+
+Durante o estudo, foram identificados os seguintes desafios:
+
+\begin{itemize}
+    \item \textbf{Interdependência entre submódulos do sistema:} alterações realizadas para atender a um requisito não funcional em um módulo podem causar falhas inesperadas em outros módulos devido às dependências existentes.
+
+    \item \textbf{Dificuldade na análise de causa-raiz:} como os requisitos não funcionais são distribuídos entre diferentes equipes, identificar a origem de um problema torna-se um processo complexo e demorado.
+
+    \item \textbf{Rastreamento do ciclo de vida dos NFRs:} há pouca visibilidade para acompanhar um requisito não funcional desde sua implementação até a versão final do software, e o rastreamento manual pode gerar inconsistências.
+
+    \item \textbf{Instabilidade dos ambientes de Integração Contínua:} limitações de hardware ou problemas de rede podem provocar falsos positivos nos testes, afetando principalmente requisitos relacionados ao desempenho, como tempo de resposta e latência.
+
+    \item \textbf{Análise dos relatórios de testes:} embora os dados sejam gerados, muitas empresas não os armazenam de forma centralizada devido à falta de conhecimento sobre quais métricas monitorar, dificultando a análise dos resultados.
+\end{itemize}
+
+\subsection{Ameaças à validade}
+
+Os autores discutem quatro ameaças à validade do estudo:
+
+\begin{itemize}
+    \item \textbf{Validade interna:} possibilidade de interpretação incorreta das perguntas das entrevistas, mitigada por meio de testes-piloto.
+
+    \item \textbf{Validade externa:} o estudo foi realizado apenas em empresas dos países nórdicos, limitando a generalização dos resultados para outros contextos.
+
+    \item \textbf{Validade de construto:} alguns participantes poderiam deixar de relatar desafios reais, risco reduzido pela garantia de anonimato.
+
+    \item \textbf{Validade de conclusão:} a análise temática dos dados envolve certo grau de subjetividade na interpretação dos resultados.
+\end{itemize}
+
+\subsection{Melhorias propostas}
+
+Como trabalhos futuros, os autores sugerem:
+
+\begin{itemize}
+    \item aprofundar a investigação sobre o papel dos componentes dos ambientes de Integração Contínua no suporte aos testes de requisitos não funcionais;
+
+    \item implementar sondas baseadas em algoritmos de aprendizado de máquina para analisar os dados produzidos pelos testes de NFRs;
+
+    \item aperfeiçoar os ambientes de Integração Contínua para viabilizar testes orientados por dados (\textit{data-driven testing}).
+\end{itemize}
+
+
+
+
+
+\section{Aplicação Prática}
+
+\subsection{Tipo de empresa}
+
+A abordagem apresentada no artigo pode ser aplicada em empresas de desenvolvimento de software que utilizam ambientes de Integração Contínua (CI) em seus processos. Ela é especialmente útil para organizações que precisam monitorar continuamente requisitos não funcionais, como desempenho, segurança, escalabilidade e manutenibilidade.
+
+\subsection{Tipos de projetos}
+
+Pode ser empregada em aplicações web, sistemas corporativos, serviços em nuvem e outros projetos em que a qualidade dos requisitos não funcionais seja um fator importante.
+
+\subsection{Etapa de aplicação}
+
+A abordagem é aplicada durante todo o processo de desenvolvimento, sendo integrada ao ambiente de Integração Contínua. Dessa forma, sempre que novas alterações são incorporadas ao código, os testes automatizados podem ser executados e as métricas dos requisitos não funcionais atualizadas continuamente.
+
+\subsection{Ferramentas utilizadas}
+
+As ferramentas dependem do tipo de requisito não funcional que será avaliado. No estudo, foram utilizadas ferramentas como JMeter, JUnit, Postman, ZAP, Anchore e SonarQube para a execução dos testes, além de Jenkins, Bitbucket, VMware e JFrog Artifactory para apoiar o processo de Integração Contínua e o gerenciamento das atividades.
+
+\subsection{Avaliação da solução}
+
+Com base nos resultados apresentados no artigo, considera-se que a solução possui potencial para melhorar a automação dos testes de requisitos não funcionais em organizações que já utilizam Integração Contínua. A abordagem permite o monitoramento contínuo da qualidade do software e a detecção precoce de problemas.
+
+
+
+\section{Análise Crítica}
+
+\subsection{Qualidade da redação}
+
+O artigo é bem estruturado e apresenta uma organização clara das informações. A divisão em introdução, fundamentação teórica, metodologia, resultados, discussão e conclusão facilita a compreensão do estudo. Além disso, os autores utilizam tabelas e figuras que contribuem para a interpretação dos resultados e para a apresentação do modelo proposto.
+
+\subsection{Avaliação da metodologia}
+
+A metodologia adotada mostrou-se adequada aos objetivos da pesquisa. O estudo de caso múltiplo permitiu analisar práticas utilizadas em diferentes empresas de desenvolvimento de software, enquanto as entrevistas possibilitaram a obtenção de informações detalhadas sobre a utilização de ambientes de Integração Contínua para testes de requisitos não funcionais. Entretanto, como a pesquisa foi realizada apenas em empresas dos países nórdicos, a generalização dos resultados para outros contextos deve ser feita com cuidado.
+
+\subsection{Avaliação dos resultados}
+
+Os resultados apresentados são consistentes com os objetivos da pesquisa e demonstram como os ambientes de Integração Contínua podem apoiar a automação dos testes de requisitos não funcionais. A identificação de ferramentas, métricas e componentes de CI, aliada à proposição do modelo teórico, torna as conclusões bem fundamentadas.
+
+\subsection{Aplicação da técnica}
+
+A técnica proposta pode ser aplicada em organizações que já utilizam ambientes de Integração Contínua e desejam aprimorar o monitoramento de requisitos não funcionais. A utilização do modelo pode contribuir para a identificação precoce de problemas e para a melhoria contínua da qualidade do software, desde que a empresa possua uma infraestrutura de CI adequada.
+
+\subsection{Possíveis melhorias}
+
+Como sugestão de aprimoramento, seria interessante que futuras pesquisas realizassem estudos experimentais para validar o modelo em diferentes tipos de projetos e organizações. Além disso, a inclusão de empresas de outros países e setores poderia ampliar a aplicabilidade dos resultados e fornecer evidências adicionais sobre a eficácia da abordagem proposta.
+
+
+
+\section{Conclusão}
+
+\subsection{Principais aprendizados}
+
+O estudo demonstra que os ambientes de Integração Contínua (\textit{CI}) podem desempenhar um papel mais amplo do que apenas integrar código e executar testes funcionais. Os dados gerados pelos componentes desses ambientes podem ser utilizados para criar métricas que auxiliam na automação e no monitoramento contínuo dos Requisitos Não Funcionais (\textit{NFRs}).
+
+\subsection{Principal contribuição}
+
+A principal contribuição do artigo é a proposição de um modelo teórico-empírico que relaciona os componentes dos ambientes de Integração Contínua aos dados produzidos durante o desenvolvimento, demonstrando como essas informações podem ser transformadas em métricas para a avaliação contínua de requisitos não funcionais.
+
+\subsection{Recomendações}
+
+Com base nos resultados apresentados, considera-se que a abordagem é promissora para organizações que utilizam Integração Contínua e desejam automatizar a avaliação de requisitos não funcionais. Apesar das limitações e desafios identificados no estudo, a técnica demonstra potencial para melhorar o monitoramento da qualidade do software e favorecer a identificação precoce de problemas.
+
+\subsection{Pesquisas futuras}
+
+Como trabalhos futuros, os autores sugerem a realização de novos estudos de caso em diferentes contextos e domínios, o aprofundamento da investigação sobre o papel dos componentes da Integração Contínua e a aplicação de algoritmos de aprendizado de máquina para analisar os dados produzidos pelos testes de NFR.
+
+
+
+\section{Demonstração Prática}
+ 
+Como forma de ilustrar, na prática, o conceito central discutido no artigo analisado, foi desenvolvido uma pequena demonstração que reproduz, de maneira simplificada, um dos exemplos apresentados pelos autores (\textit{Example 1}, Seção 4.2 do artigo): a medição automatizada de uma métrica de desempenho -- o Tempo Médio de Resposta (\textit{Mean Response Time -- MRT}) -- integrada a um \textit{pipeline} de Integração Contínua.
+ 
+\subsection{Estrutura da demonstração}
+ 
+A demonstração é composta por três elementos:
+ 
+\begin{itemize}
+    \item uma API mínima, desenvolvida em Node.js/Express, contendo uma rota simples que simula uma consulta de dados;
+    \item um teste automatizado de desempenho, responsável por realizar múltiplas requisições a essa rota e calcular o MRT, utilizando a mesma fórmula apresentada na Tabela 6 do artigo (\textit{MRT = (A\textsubscript{1} + A\textsubscript{2} + ... + A\textsubscript{n}) / n});
+    \item um \textit{workflow} do GitHub Actions, que executa esse teste automaticamente a cada envio de código (\textit{push}) ao repositório, reproduzindo o papel do ``servidor de CI'' descrito no modelo teórico do artigo (Figura~\ref{fig:modelo-nfr}).
+\end{itemize}
+ 
+\subsection{Cenário de sucesso}
+ 
+No primeiro cenário, a aplicação responde dentro do limite de tempo previamente estabelecido (100 ms). O \textit{pipeline} de CI executa o teste automaticamente, calcula o MRT com base nas requisições coletadas e conclui a execução com sucesso, sinalizando que o requisito não funcional de desempenho foi atendido. A Figura~\ref{fig:demo-sucesso} apresenta a execução do \textit{workflow} nesse cenário.
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{demo-sucesso.png}
+    \caption{Execução do pipeline de CI com o teste de performance aprovado (MRT dentro do limite estabelecido).}
+    \label{fig:demo-sucesso}
+\end{figure}
+ 
+\subsection{Cenário de falha}
+ 
+No segundo cenário, uma latência artificial foi introduzida propositalmente no código da API, fazendo com que o MRT calculado superasse o limite de 100 ms definido no \textit{workflow}. Como consequência, o \textit{pipeline} de CI falha automaticamente, sinalizando à equipe de desenvolvimento que o requisito não funcional de desempenho não foi atendido -- exatamente o comportamento de notificação automática discutido pelos autores como um dos principais benefícios de se utilizar ambientes de CI para testes de NFRs. A Figura~\ref{fig:demo-falha} apresenta a execução do \textit{workflow} nesse cenário.
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{demo-falha.png}
+    \caption{Execução do pipeline de CI com o teste de performance reprovado (MRT acima do limite estabelecido).}
+    \label{fig:demo-falha}
+\end{figure}
+ 
+\subsection{Repositório da demonstração}
+ 
+O código-fonte completo da demonstração, incluindo a API, o script de teste automatizado e o \textit{workflow} do GitHub Actions, está disponível no seguinte repositório:
+ 
+\begin{center}
+    \url{https://github.com/Fernanda135/ci-nfr-demo}
+\end{center}
+
+
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.11)  26 JUL 2026 21:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.11)  27 JUL 2026 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -236,78 +236,83 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 24.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 36.
+ [1
+
+{C:/Users/thesa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/thesa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 49.
  (C:\Users\thesa\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [1
-
-{C:/Users/thesa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/thesa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] [2] [3]
-<modelo-nfr.png, id=16, 545.6385pt x 221.02576pt>
-File: modelo-nfr.png Graphic file (type png)
-<use modelo-nfr.png>
-Package pdftex.def Info: modelo-nfr.png  used on input line 173.
-(pdftex.def)             Requested size: 426.79135pt x 172.88504pt.
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 174.
- (C:\Users\thesa\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1phv.fd
-File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
-)
-Underfull \hbox (badness 1221) in paragraph at lines 187--188
-\OT1/ptm/m/n/12 Como re-sul-tado do pro-ces-sa-mento des-sas informa[][]oes, o am-bi-ente de Integra[][]ao
- []
-
-[4 <./modelo-nfr.png>]
-<sintese-resultados.png, id=23, 413.74574pt x 331.2375pt>
+) [2]
+<sintese-resultados.png, id=13, 499.8675pt x 347.49825pt>
 File: sintese-resultados.png Graphic file (type png)
 <use sintese-resultados.png>
-Package pdftex.def Info: sintese-resultados.png  used on input line 198.
-(pdftex.def)             Requested size: 426.79135pt x 341.699pt.
- [5 <./sintese-resultados.png>]
-<metricas-nfr.png, id=28, 582.37575pt x 361.95226pt>
+Package pdftex.def Info: sintese-resultados.png  used on input line 82.
+(pdftex.def)             Requested size: 426.79135pt x 296.70578pt.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 83.
+ (C:\Users\thesa\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
+) [3 <./sintese-resultados.png>]
+<metricas-nfr.png, id=20, 582.37575pt x 361.95226pt>
 File: metricas-nfr.png Graphic file (type png)
 <use metricas-nfr.png>
-Package pdftex.def Info: metricas-nfr.png  used on input line 218.
+Package pdftex.def Info: metricas-nfr.png  used on input line 92.
 (pdftex.def)             Requested size: 426.79135pt x 265.26677pt.
- [6 <./metricas-nfr.png>] [7] [8] [9]
-Underfull \hbox (badness 1571) in paragraph at lines 363--364
+
+Underfull \hbox (badness 3482) in paragraph at lines 107--108
+[]\OT1/ptm/b/n/12 Baixa vi-si-bi-li-dade \OT1/ptm/m/n/12 para acom-pa-nhar o ci-clo de vida de um NFR, da
+ []
+
+[4 <./metricas-nfr.png>] [5]
+Underfull \hbox (badness 1571) in paragraph at lines 153--154
 []\OT1/ptm/m/n/12 um teste au-to-ma-ti-zado de de-sem-pe-nho, res-pons[]avel por re-a-li-zar m[]ultiplas
  []
 
-<demo-sucesso.png, id=43, 449.88075pt x 439.6425pt>
+
+LaTeX Warning: Reference `fig:modelo-nfr' on page 6 undefined on input line 154.
+
+<demo-sucesso.png, id=28, 449.88075pt x 439.6425pt>
 File: demo-sucesso.png Graphic file (type png)
 <use demo-sucesso.png>
-Package pdftex.def Info: demo-sucesso.png  used on input line 373.
+Package pdftex.def Info: demo-sucesso.png  used on input line 163.
 (pdftex.def)             Requested size: 426.79135pt x 417.08107pt.
-[10]
-<demo-falha.png, id=47, 523.9575pt x 458.9145pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+<demo-falha.png, id=32, 523.9575pt x 458.9145pt>
 File: demo-falha.png Graphic file (type png)
 <use demo-falha.png>
-Package pdftex.def Info: demo-falha.png  used on input line 384.
+Package pdftex.def Info: demo-falha.png  used on input line 174.
 (pdftex.def)             Requested size: 426.79135pt x 373.81944pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./demo-sucesso.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 394.
+ [7 <./demo-sucesso.png>]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 184.
  (C:\Users\thesa\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) (main.bbl) [12 <./demo-falha.png>] (main.aux)
+) (main.bbl) [8 <./demo-falha.png>] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 5441 strings out of 467871
- 93554 string characters out of 5418376
- 520979 words of memory out of 5000000
- 34261 multiletter control sequences out of 15000+600000
+ 5433 strings out of 467871
+ 93400 string characters out of 5418376
+ 521916 words of memory out of 5000000
+ 34253 multiletter control sequences out of 15000+600000
  646605 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,8n,79p,825b,424s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,8n,79p,744b,424s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/thesa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/thesa/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/thesa/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/thesa/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/thesa/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/thesa/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/thesa/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 578524 bytes).
+Output written on main.pdf (8 pages, 396287 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
+ 74 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
