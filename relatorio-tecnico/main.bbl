@@ -1,0 +1,9 @@
+\begin{thebibliography}{}
+
+\bibitem[Yu et~al. 2023]{yu2023automated}
+Yu, L., Al{\'e}groth, E., Chatzipetrou, P., and Gorschek, T. (2023).
+\newblock Automated nfr testing in continuous integration environments: a
+  multi-case study of nordic companies.
+\newblock {\em Empirical Software Engineering}, 28(6):144.
+
+\end{thebibliography}
