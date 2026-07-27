@@ -18,7 +18,7 @@ const produtos = [
 
 // Latência artificial (ms) para simular processamento/consulta ao banco.
 // Pode ser aumentada para forçar o teste de performance a falhar na demonstração.
-const LATENCIA_MS = Number(process.env.LATENCIA_MS || 150);
+const LATENCIA_MS = Number(process.env.LATENCIA_MS || 30);
 
 app.get('/produtos', (req, res) => {
   setTimeout(() => {
