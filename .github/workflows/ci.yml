@@ -1,0 +1,33 @@
+name: CI Pipeline - Teste automatizado de NFR (Performance)
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  teste-performance:
+    name: Medir MRT (Mean Response Time)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Executar teste automatizado de NFR (Performance)
+        env:
+          NUM_REQUISICOES: 20
+          LIMITE_MRT_MS: 100
+        run: npm run test:performance
+
+      - name: Resultado
+        if: always()
+        run: echo "Job finalizado. Verifique acima o valor de MRT calculado e se o limite foi respeitado."
