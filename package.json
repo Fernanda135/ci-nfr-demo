@@ -1,7 +1,7 @@
 {
   "name": "ci-nfr-demo",
   "version": "1.0.0",
-  "description": "Demonstração prática: teste automatizado de NFR (performance) integrado a um pipeline de CI, baseado no modelo apresentado em Yu et al. (2023).",
+  "description": "Demonstração prática: teste automatizado de NFR (performance) integrado a um pipeline de CI",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
